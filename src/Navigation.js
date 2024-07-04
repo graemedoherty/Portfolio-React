@@ -26,6 +26,7 @@ const Navigation = ({ scrollToSection, activeSection }) => {
           fontWeight: 200,
           '& .MuiButton-root': {
             borderRadius: 0,
+            transition: 'transform 0.3s ease, background-color 0.3s ease',
           },
         }}
       >
@@ -45,9 +46,8 @@ const Navigation = ({ scrollToSection, activeSection }) => {
               },
               transform:
                 activeSection === btn.section
-                  ? 'translateX(5px)'
-                  : 'translateX(-5px)',
-              transition: 'transform 0.3s ease, background-color 0.3s ease',
+                  ? 'translateX(10px)'
+                  : 'translateX(-20px)',
             }}
             endIcon={activeSection === btn.section ? <ArrowRightIcon /> : null}
           >

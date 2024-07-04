@@ -1,20 +1,37 @@
 #Social-Icons {
+  width: 80%;
   display: flex;
-  justify-content: space-evenly;
-  width: 200px;
-  margin: 2em;
+  justify-content: space-around; /* Space the icons evenly */
+  align-items: center; /* Center the icons vertically */
+  margin-bottom: 1rem; /* Adjust as needed */
 }
 
 #Social-Icons a {
-  text-decoration: none; /* Remove underline from anchor tags */
-  transition: transform 0.2s, font-size 0.2s; /* Transition for smooth animation */
+  color: white; /* Default color for the icons */
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px; /* Add horizontal spacing between icons */
 }
 
 #Social-Icons a:hover {
-  transform: scale(1.5); /* Scale up the icon on hover */
+  transform: scale(2); /* Grow the icon on hover */
 }
 
-#Social-Icons a:hover svg {
-  font-size: 2rem; /* Increase the font size of the icon on hover */
-  transition: font-size 0.2s; /* Transition for smooth font size change */
+/* Specific hover colors for each icon */
+#Social-Icons a[href*='facebook.com']:hover {
+  color: #1877f2; /* Facebook blue */
+}
+
+#Social-Icons a[href*='instagram.com']:hover {
+  color: #fa7e1e; /* Instagram gradient color */
+}
+
+#Social-Icons a[href*='linkedin.com']:hover {
+  color: #0a66c2; /* LinkedIn blue */
+}
+
+#Social-Icons a[href*='github.com']:hover {
+  color: #333; /* GitHub black */
 }

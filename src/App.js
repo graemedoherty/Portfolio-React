@@ -63,6 +63,7 @@ function App() {
     <div className='App'>
       <Background />
       <div className='Main'>
+        {/* Left Section */}
         <Grow
           in={true}
           style={{ transformOrigin: '0 0 0' }}
@@ -81,7 +82,7 @@ function App() {
             </div>
           </div>
         </Grow>
-
+        {/* Right Section: Main Content */}
         <Content
           aboutRef={aboutRef}
           resumeRef={resumeRef}
