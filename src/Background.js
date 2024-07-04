@@ -22,7 +22,7 @@ const Background = () => {
       fullscreen: { enable: true, 'z-index': -1 },
       background: {
         color: {
-          value: '#0d47a1',
+          value: '#070F2B',
         },
       },
       fpsLimit: 120,
@@ -49,14 +49,14 @@ const Background = () => {
       },
       particles: {
         color: {
-          value: '#ffffff',
+          value: '#144272',
         },
         links: {
           color: '#ffffff',
           distance: 150,
           enable: true,
-          opacity: 0.5,
-          width: 1,
+          opacity: 1,
+          width: 2,
         },
         move: {
           direction: 'none',
@@ -65,7 +65,7 @@ const Background = () => {
             default: 'bounce',
           },
           random: false,
-          speed: 6,
+          speed: 1,
           straight: false,
         },
         number: {
