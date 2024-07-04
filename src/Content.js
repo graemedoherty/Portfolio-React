@@ -1,5 +1,6 @@
 import React from 'react';
 import Slide from '@mui/material/Slide';
+import About from './About/About';
 
 const Content = ({ aboutRef, resumeRef, skillsRef, projectsRef }) => {
   return (
@@ -11,7 +12,7 @@ const Content = ({ aboutRef, resumeRef, skillsRef, projectsRef }) => {
         timeout={1000}
       >
         <div className='Content-Row' id='About' ref={aboutRef}>
-          <h1>About</h1>
+          <About />
         </div>
       </Slide>
       <Slide

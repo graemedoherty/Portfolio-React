@@ -1,0 +1,24 @@
+.typed-container {
+  text-align: left; /* Center the text */
+}
+
+.typed-item {
+  margin-bottom: 20px; /* Space between the two typed items */
+}
+
+.typed-text {
+  font-size: 3rem; /* Make the text really big */
+  font-weight: bold; /* Make the text bold */
+  color: white; /* Change the color if needed */
+  display: block; /* Ensure each text block is on a new line */
+}
+
+.typed-text b {
+  color: blue;
+}
+
+.third-typed {
+  font-size: 4rem; /* Example of larger font size */
+  margin-top: 2rem; /* Example of margin top */
+  /* Add any other styles as needed */
+}
