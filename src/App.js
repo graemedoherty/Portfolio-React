@@ -6,19 +6,14 @@ import Background from './Background';
 import ImageComponent from './ImageComponent';
 import Grow from '@mui/material/Grow';
 import Navigation from './Navigation';
+import Content from './Content';
 
 function App() {
-  const aboutRef = useRef(null);
-  const skillsRef = useRef(null);
-  const projectsRef = useRef(null);
+  const contentRef = useRef(null);
 
   const scrollToSection = (section) => {
-    if (section === 'About' && aboutRef.current) {
-      aboutRef.current.scrollIntoView({ behavior: 'smooth' });
-    } else if (section === 'Skills' && skillsRef.current) {
-      skillsRef.current.scrollIntoView({ behavior: 'smooth' });
-    } else if (section === 'Projects' && projectsRef.current) {
-      projectsRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (contentRef.current) {
+      contentRef.current.scrollToSection(section);
     }
   };
 
@@ -44,18 +39,7 @@ function App() {
           </div>
         </Grow>
 
-        <div className='Content grid-item'>
-          <div className='Content-Row About-Section' ref={aboutRef}>
-            About
-          </div>
-
-          <div className='Content-Row Skills-Section' ref={skillsRef}>
-            Skills
-          </div>
-          <div className='Content-Row Projects-Section' ref={projectsRef}>
-            Projects
-          </div>
-        </div>
+        <Content ref={contentRef} />
       </div>
     </div>
   );

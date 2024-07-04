@@ -12,10 +12,13 @@ const Navigation = ({ scrollToSection }) => {
     <Button key='one' onClick={handleButtonClick('About')}>
       About
     </Button>,
-    <Button key='two' onClick={handleButtonClick('Skills')}>
+    <Button key='two' onClick={handleButtonClick('Resume')}>
+      Resume
+    </Button>,
+    <Button key='three' onClick={handleButtonClick('Skills')}>
       Skills
     </Button>,
-    <Button key='three' onClick={handleButtonClick('Projects')}>
+    <Button key='four' onClick={handleButtonClick('Projects')}>
       Projects
     </Button>,
   ];

@@ -1,11 +1,10 @@
 .Content {
-  border: 1px solid white;
   overflow: scroll;
   overflow-y: hidden; /* Hide vertical scrollbar */
   overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 .Content-Row {
-  border: 2px solid red;
   height: 600px;
+  color: white;
 }
