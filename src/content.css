@@ -1,10 +1,17 @@
 .Content {
-  overflow: scroll;
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden; /* Hide horizontal scrollbar */
+  height: 100vh; /* Full height of the viewport */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.Content::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
 }
 
 .Content-Row {
-  height: 600px;
+  padding: 20px;
+  height: 700px;
+  border-bottom: 1px solid #ccc;
   color: white;
 }

@@ -28,7 +28,7 @@ const Content = forwardRef((props, ref) => {
         in={true}
         container={aboutRef.current}
         style={{ transformOrigin: '0 0 0' }}
-        {...(true ? { timeout: 1000 } : {})}
+        {...(true ? { timeout: 500 } : {})}
       >
         <div className='Content-Row' ref={aboutRef}>
           <h1>About</h1>
@@ -38,7 +38,7 @@ const Content = forwardRef((props, ref) => {
         in={true}
         container={resumeRef.current}
         style={{ transformOrigin: '0 0 0' }}
-        {...(true ? { timeout: 2000 } : {})}
+        {...(true ? { timeout: 800 } : {})}
       >
         <div className='Content-Row' ref={resumeRef}>
           <h1>Resume</h1>
@@ -48,7 +48,7 @@ const Content = forwardRef((props, ref) => {
         in={true}
         container={skillsRef.current}
         style={{ transformOrigin: '0 0 0' }}
-        {...(true ? { timeout: 3000 } : {})}
+        {...(true ? { timeout: 1100 } : {})}
       >
         <div className='Content-Row' ref={skillsRef}>
           <h1>Skills</h1>
@@ -58,7 +58,7 @@ const Content = forwardRef((props, ref) => {
         in={true}
         container={projectsRef.current}
         style={{ transformOrigin: '0 0 0' }}
-        {...(true ? { timeout: 4000 } : {})}
+        {...(true ? { timeout: 1400 } : {})}
       >
         <div className='Content-Row' ref={projectsRef}>
           <h1>Projects</h1>

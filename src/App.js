@@ -28,9 +28,9 @@ function App() {
         >
           <div className='Side grid-item'>
             <div id='Details'>
-              <div id='Image'>
+              {/* <div id='Image'>
                 <ImageComponent />
-              </div>
+              </div> */}
               <div id='Name'>
                 <h1>Graeme Doherty</h1>
               </div>

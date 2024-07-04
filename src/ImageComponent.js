@@ -6,7 +6,7 @@ const ImageComponent = () => {
     <Grow
       in={true}
       style={{ transformOrigin: '0 0 0' }}
-      {...(true ? { timeout: 3000 } : {})}
+      {...(true ? { timeout: 1000 } : {})}
     >
       <div style={{ zIndex: 100 }}>
         <img
