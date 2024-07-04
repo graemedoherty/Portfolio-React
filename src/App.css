@@ -6,6 +6,9 @@
   align-items: center;
 }
 
+.Side {
+}
+
 .Main {
   z-index: 2;
   display: grid;
