@@ -1,5 +1,28 @@
+.About-Section {
+  position: relative;
+  height: 100%; /* Full viewport height */
+  width: 100%; /* Full width */
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.Typed-Wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  z-index: 2; /* Ensure text is above other elements if needed */
+}
+
+.CoderAnimation-Wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  z-index: 1; /* Ensure animation is behind the text */
+}
+
 .typed-container {
-  text-align: left; /* Center the text */
+  position: relative;
 }
 
 .typed-item {
@@ -21,4 +44,28 @@
   font-size: 4rem; /* Example of larger font size */
   margin-top: 2rem; /* Example of margin top */
   /* Add any other styles as needed */
+}
+
+.glow-text {
+  font-size: 5em; /* Adjust font size as needed */
+  color: #fff; /* Text color */
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px #00c4ff, 0 0 20px #00c4ff, 0 0 30px #00c4ff;
+  }
+  100% {
+    text-shadow: 0 0 20px #00c4ff, 0 0 30px #00c4ff, 0 0 40px #00c4ff;
+  }
+}
+
+.glow-text {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.typed-item {
+  margin-top: 20px;
+  font-size: 2rem;
 }

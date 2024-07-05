@@ -4,20 +4,28 @@ import './about.css'; // Import the CSS file
 
 const Typed = () => {
   const [showSecond, setShowSecond] = useState(false);
+  const [showThird, setShowThird] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const timer1 = setTimeout(() => {
       setShowSecond(true);
-    }, 2000); // Wait for 3 seconds before showing the second typed component
+    }, 3000); // Wait for 3 seconds before showing the second typed component
 
-    return () => clearTimeout(timer);
+    const timer2 = setTimeout(() => {
+      setShowThird(true);
+    }, 7000); // Start typing the third string after the same delay as showSecond
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
   }, []);
 
   return (
     <div className='typed-container'>
       <div className='typed-item'>
         <ReactTyped
-          strings={[`Hi , I'm Graeme &#x1F44B;`]}
+          strings={['Hello, my name is Graeme 👋']}
           typeSpeed={100}
           showCursor={false}
           className='typed-text'
@@ -26,31 +34,33 @@ const Typed = () => {
           <>
             <ReactTyped
               strings={['I am a <b>Software Engineer</b>']}
-              typeSpeed={100}
+              typeSpeed={200}
               showCursor={false}
               className='typed-text'
               startDelay={2000} // Start typing the second string after a delay
             />
-            <ReactTyped
-              strings={[
-                'Frontend',
-                'React',
-                'TypeScript',
-                'JavaScript',
-                'Sass',
-                'Android',
-                'iOS',
-                'Backend',
-                'Spring',
-                'Node',
-                'SQL',
-              ]}
-              loop
-              typeSpeed={200}
-              showCursor={false}
-              className='typed-text third-typed'
-              startDelay={5000} // Start typing the third string after a delay
-            />
+            {showThird && (
+              <ReactTyped
+                strings={[
+                  'Frontend',
+                  'React',
+                  'TypeScript',
+                  'JavaScript',
+                  'Sass',
+                  'AWS',
+                  'HTML',
+                  'CSS',
+                  'Backend',
+                  'Spring',
+                  'Node.js',
+                ]}
+                loop
+                typeSpeed={100}
+                showCursor={true}
+                className='glow-text' // Apply glow effect to this component
+                startDelay={3000} // Start typing the third string after the same delay as showSecond
+              />
+            )}
           </>
         )}
       </div>

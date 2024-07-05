@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-around; /* Space the icons evenly */
   align-items: center; /* Center the icons vertically */
-  margin-bottom: 1rem; /* Adjust as needed */
+  margin-bottom: 3rem; /* Adjust as needed */
 }
 
 #Social-Icons a {
@@ -16,7 +16,7 @@
 }
 
 #Social-Icons a:hover {
-  transform: scale(2); /* Grow the icon on hover */
+  transform: scale(4); /* Grow the icon on hover */
 }
 
 /* Specific hover colors for each icon */
