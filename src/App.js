@@ -1,3 +1,4 @@
+// src/App.js
 import React, { useRef, useState, useEffect } from 'react';
 import './App.css';
 import './details.css';
@@ -7,6 +8,7 @@ import Grow from '@mui/material/Grow';
 import SocialMediaLinks from './SocialMediaLinks';
 import Navigation from './Navigation';
 import Content from './Content';
+import ContactFAB from './Contact/ContactFAB';
 
 function App() {
   const aboutRef = useRef(null);
@@ -63,7 +65,6 @@ function App() {
     <div className='App'>
       <Background />
       <div className='Main'>
-        {/* Left Section */}
         <Grow
           in={true}
           style={{ transformOrigin: '0 0 0' }}
@@ -82,13 +83,15 @@ function App() {
             </div>
           </div>
         </Grow>
-        {/* Right Section: Main Content */}
         <Content
           aboutRef={aboutRef}
           resumeRef={resumeRef}
           skillsRef={skillsRef}
           projectsRef={projectsRef}
         />
+        <div className='ContactFAB-Wrapper'>
+          <ContactFAB />
+        </div>
       </div>
     </div>
   );

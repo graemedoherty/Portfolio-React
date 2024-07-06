@@ -1,6 +1,7 @@
 import React from 'react';
 import Slide from '@mui/material/Slide';
 import About from './About/About';
+import './content.css';
 
 const Content = ({ aboutRef, resumeRef, skillsRef, projectsRef }) => {
   return (
