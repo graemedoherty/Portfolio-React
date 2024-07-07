@@ -23,47 +23,47 @@ const Typed = () => {
 
   return (
     <div className='typed-container'>
-      <div className='typed-item'>
+      <div className='typed-group'>
         <ReactTyped
           strings={['Hello, my name is Graeme 👋']}
-          typeSpeed={100}
+          typeSpeed={50}
           showCursor={false}
           className='typed-text'
         />
         {showSecond && (
-          <>
-            <ReactTyped
-              strings={['I am a <b>Software Engineer</b>']}
-              typeSpeed={200}
-              showCursor={false}
-              className='typed-text'
-              startDelay={2000} // Start typing the second string after a delay
-            />
-            {showThird && (
-              <ReactTyped
-                strings={[
-                  'Frontend',
-                  'React',
-                  'TypeScript',
-                  'JavaScript',
-                  'Sass',
-                  'AWS',
-                  'HTML',
-                  'CSS',
-                  'Backend',
-                  'Spring',
-                  'Node.js',
-                ]}
-                loop
-                typeSpeed={100}
-                showCursor={true}
-                className='glow-text' // Apply glow effect to this component
-                startDelay={3000} // Start typing the third string after the same delay as showSecond
-              />
-            )}
-          </>
+          <ReactTyped
+            strings={['I am a <b>Software Engineer</b>']}
+            typeSpeed={50}
+            showCursor={false}
+            className='typed-text'
+            startDelay={2000} // Start typing the second string after a delay
+          />
         )}
       </div>
+      {showThird && (
+        <div className='typed-single'>
+          <ReactTyped
+            strings={[
+              'Frontend',
+              'React',
+              'TypeScript',
+              'JavaScript',
+              'Sass',
+              'AWS',
+              'HTML',
+              'CSS',
+              'Backend',
+              'Spring',
+              'Node.js',
+            ]}
+            loop
+            typeSpeed={100}
+            showCursor={true}
+            className='glow-text' // Apply glow effect to this component
+            startDelay={3000} // Start typing the third string after the same delay as showSecond
+          />
+        </div>
+      )}
     </div>
   );
 };

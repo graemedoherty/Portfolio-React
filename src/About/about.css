@@ -7,6 +7,7 @@
 
 .Typed-Wrapper {
   position: absolute;
+  height: 60%;
   top: 0;
   left: 0;
   padding: 20px;
@@ -18,11 +19,15 @@
   bottom: 0;
   right: 0;
   padding: 20px;
-  z-index: 1; /* Ensure animation is behind the text */
+  z-index: -1; /* Ensure animation is behind the text */
+  padding: 5em;
 }
 
 .typed-container {
-  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .typed-item {

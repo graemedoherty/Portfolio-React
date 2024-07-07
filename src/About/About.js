@@ -8,7 +8,6 @@ const About = () => {
     <div className='About-Section'>
       <div className='Typed-Wrapper'>
         <Typed />
-        <h1>Lorem Ipsum</h1>
       </div>
       <div className='CoderAnimation-Wrapper'>
         <CoderAnimation />
