@@ -21,17 +21,17 @@
 
 /* Specific hover colors for each icon */
 #Social-Icons a[href*='facebook.com']:hover {
-  color: #1877f2; /* Facebook blue */
+  color: #9893da; /* Facebook blue */
 }
 
 #Social-Icons a[href*='instagram.com']:hover {
-  color: #fa7e1e; /* Instagram gradient color */
+  color: #9893da; /* Instagram gradient color */
 }
 
 #Social-Icons a[href*='linkedin.com']:hover {
-  color: #0a66c2; /* LinkedIn blue */
+  color: #9893da; /* LinkedIn blue */
 }
 
 #Social-Icons a[href*='github.com']:hover {
-  color: #333; /* GitHub black */
+  color: #9893da; /* GitHub black */
 }

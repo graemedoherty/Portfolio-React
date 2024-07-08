@@ -7,6 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import emailjs from 'emailjs-com';
+import './contact.css';
 
 const ContactFAB = () => {
   const [open, setOpen] = useState(false);
