@@ -22,7 +22,7 @@ const Background = () => {
       fullscreen: { enable: true, 'z-index': -1 },
       background: {
         color: {
-          value: '#070F2B',
+          value: '#402E7A',
         },
       },
       fpsLimit: 120,

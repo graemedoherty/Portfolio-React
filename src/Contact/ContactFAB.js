@@ -52,6 +52,12 @@ const ContactFAB = () => {
         color='primary'
         aria-label='mail'
         onClick={handleOpen}
+        sx={{
+          backgroundColor: '#BBBDF6', // Set background color of Fab
+          '&:hover': {
+            backgroundColor: '#BBBDF6', // Adjust hover state if needed
+          },
+        }}
       >
         <MailOutlineIcon />
       </Fab>
@@ -73,6 +79,7 @@ const ContactFAB = () => {
               required
               value={formData.name}
               onChange={handleChange}
+              sx={{ backgroundColor: '#BBBDF6', borderRadius: 4 }} // Set input field background color
             />
             <TextField
               margin='dense'
@@ -84,6 +91,7 @@ const ContactFAB = () => {
               required
               value={formData.email}
               onChange={handleChange}
+              sx={{ backgroundColor: '#BBBDF6', borderRadius: 4 }} // Set input field background color
             />
             <TextField
               margin='dense'
@@ -96,6 +104,7 @@ const ContactFAB = () => {
               required
               value={formData.message}
               onChange={handleChange}
+              sx={{ backgroundColor: '#BBBDF6', borderRadius: 4 }} // Set input field background color
             />
             <Button type='submit' variant='contained' color='primary'>
               Submit

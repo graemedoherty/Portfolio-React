@@ -27,6 +27,10 @@ const Navigation = ({ scrollToSection, activeSection }) => {
           '& .MuiButton-root': {
             borderRadius: 0,
             transition: 'transform 0.3s ease, background-color 0.3s ease',
+            border: '1px solid transparent', // Ensure all buttons have a border
+          },
+          '& .MuiButton-root:hover': {
+            borderColor: '#BBBDF6', // Change border color on hover
           },
         }}
       >
@@ -36,11 +40,11 @@ const Navigation = ({ scrollToSection, activeSection }) => {
             onClick={handleButtonClick(btn.section)}
             sx={{
               backgroundColor:
-                activeSection === btn.section ? 'primary.main' : 'inherit',
+                activeSection === btn.section ? '#9893DA' : 'inherit',
               color: activeSection === btn.section ? 'white' : 'inherit',
               '& .MuiButton-endIcon': {
                 display: activeSection === btn.section ? 'flex' : 'none',
-                fontSize: '1.5rem',
+                fontSize: '2rem',
                 marginTop: 'auto',
                 marginBottom: 'auto',
               },

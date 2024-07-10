@@ -73,7 +73,7 @@ function App() {
           <div className='Side grid-item'>
             <div id='Details'>
               <div id='Name'>
-                <h1>Graeme Doherty</h1>
+                <div></div>
               </div>
               <Navigation
                 scrollToSection={scrollToSection}
