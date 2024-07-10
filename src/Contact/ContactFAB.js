@@ -10,6 +10,9 @@ import emailjs from 'emailjs-com';
 import './contact.css';
 
 const ContactFAB = () => {
+  const userId = process.env.REACT_APP_EMAILJS_USERID;
+  const templateId = process.env.REACT_APP_EMAILJS_TEMPLATEID;
+  const serviceId = process.env.REACT_APP_EMAILJS_SERVICEID;
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -23,6 +26,7 @@ const ContactFAB = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    console.log('User ID ', userId, templateId, serviceId);
   };
 
   const handleSubmit = (event) => {
@@ -30,17 +34,17 @@ const ContactFAB = () => {
 
     emailjs
       .send(
-        'service_dk4wbq3', // Replace with your actual service ID
-        'template_r5qia1k', // Replace with your actual template ID
+        serviceId, // Replace with your actual service ID
+        templateId, // Replace with your actual template ID
         formData,
-        '7HvNUZq2VIFM82Cvs' // Replace with your actual user ID
+        userId // Replace with your actual user ID
       )
       .then((result) => {
         console.log('Email successfully sent!', result.text);
         handleClose();
       })
       .catch((error) => {
-        console.error('Error sending email:', error);
+        //console.error('Error sending email:', error);
         // Handle error state
       });
   };
