@@ -2,13 +2,14 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './App.css';
 import './details.css';
-import './content.css';
+import './Components/Content/content.css';
+import ThemeSelector from './Components/ThemeSelector/ThemeSelector';
 import Background from './Background';
 import Grow from '@mui/material/Grow';
-import SocialMediaLinks from './SocialMediaLinks';
-import Navigation from './Navigation';
-import Content from './Content';
-import ContactFAB from './Contact/ContactFAB';
+import Navigation from './Components/Navigation/Navigation';
+import ContactFAB from './Components/Contact/ContactFAB';
+import SocialMediaLinks from './Components/SocialMedia/SocialMediaLinks';
+import Content from './Components/Content/Content';
 
 function App() {
   const aboutRef = useRef(null);
@@ -68,12 +69,14 @@ function App() {
         <Grow
           in={true}
           style={{ transformOrigin: '0 0 0' }}
-          {...(true ? { timeout: 1000 } : {})}
+          {...(true ? { timeout: 0.5 } : {})}
         >
           <div className='Side grid-item'>
             <div id='Details'>
               <div id='Name'>
-                <div></div>
+                <div>
+                  <ThemeSelector />
+                </div>
               </div>
               <Navigation
                 scrollToSection={scrollToSection}

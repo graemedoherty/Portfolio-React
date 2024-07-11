@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './navigation.css';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 
 const Navigation = ({ scrollToSection, activeSection }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const handleButtonClick = (section) => () => {
     scrollToSection(section);
   };
@@ -26,7 +32,9 @@ const Navigation = ({ scrollToSection, activeSection }) => {
           fontWeight: 200,
           '& .MuiButton-root': {
             borderRadius: 0,
-            transition: 'transform 0.3s ease, background-color 0.3s ease',
+            transition: isMounted
+              ? 'transform 0.3s ease, background-color 0.3s ease'
+              : 'none',
             border: '1px solid transparent', // Ensure all buttons have a border
           },
           '& .MuiButton-root:hover': {

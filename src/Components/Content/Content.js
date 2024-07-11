@@ -1,6 +1,6 @@
 import React from 'react';
 import Slide from '@mui/material/Slide';
-import About from './About/About';
+import About from '../About/About';
 import './content.css';
 
 const Content = ({ aboutRef, resumeRef, skillsRef, projectsRef }) => {
@@ -10,7 +10,8 @@ const Content = ({ aboutRef, resumeRef, skillsRef, projectsRef }) => {
         in={true}
         container={aboutRef.current}
         style={{ transformOrigin: '0 0 0' }}
-        timeout={1000}
+        timeout={2000}
+        direction='up'
       >
         <div className='Content-Row' id='About' ref={aboutRef}>
           <About />
@@ -20,7 +21,8 @@ const Content = ({ aboutRef, resumeRef, skillsRef, projectsRef }) => {
         in={true}
         container={resumeRef.current}
         style={{ transformOrigin: '0 0 0' }}
-        timeout={2000}
+        timeout={1600}
+        direction='up'
       >
         <div className='Content-Row' id='Resume' ref={resumeRef}>
           <h1>Resume</h1>
@@ -30,7 +32,8 @@ const Content = ({ aboutRef, resumeRef, skillsRef, projectsRef }) => {
         in={true}
         container={skillsRef.current}
         style={{ transformOrigin: '0 0 0' }}
-        timeout={3000}
+        timeout={1200}
+        direction='up'
       >
         <div className='Content-Row' id='Skills' ref={skillsRef}>
           <h1>Skills</h1>
@@ -40,7 +43,8 @@ const Content = ({ aboutRef, resumeRef, skillsRef, projectsRef }) => {
         in={true}
         container={projectsRef.current}
         style={{ transformOrigin: '0 0 0' }}
-        timeout={4000}
+        timeout={800}
+        direction='up'
       >
         <div className='Content-Row' id='Projects' ref={projectsRef}>
           <h1>Projects</h1>

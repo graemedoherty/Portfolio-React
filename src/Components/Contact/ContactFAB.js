@@ -26,7 +26,6 @@ const ContactFAB = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    console.log('User ID ', userId, templateId, serviceId);
   };
 
   const handleSubmit = (event) => {
@@ -44,8 +43,8 @@ const ContactFAB = () => {
         handleClose();
       })
       .catch((error) => {
-        //console.error('Error sending email:', error);
         // Handle error state
+        console.error('Error sending email:', error);
       });
   };
 
@@ -57,9 +56,9 @@ const ContactFAB = () => {
         aria-label='mail'
         onClick={handleOpen}
         sx={{
-          backgroundColor: '#BBBDF6', // Set background color of Fab
+          backgroundColor: '#BBBDF6',
           '&:hover': {
-            backgroundColor: '#BBBDF6', // Adjust hover state if needed
+            backgroundColor: '#BBBDF6',
           },
         }}
       >
@@ -70,7 +69,7 @@ const ContactFAB = () => {
         <DialogContent sx={{ minWidth: 300, p: 2 }}>
           <form
             onSubmit={handleSubmit}
-            style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}
+            style={{ display: 'flex', flexDirection: 'column', gap: '1em' }}
           >
             <TextField
               autoFocus
@@ -83,7 +82,6 @@ const ContactFAB = () => {
               required
               value={formData.name}
               onChange={handleChange}
-              sx={{ backgroundColor: '#BBBDF6', borderRadius: 4 }} // Set input field background color
             />
             <TextField
               margin='dense'
@@ -95,7 +93,6 @@ const ContactFAB = () => {
               required
               value={formData.email}
               onChange={handleChange}
-              sx={{ backgroundColor: '#BBBDF6', borderRadius: 4 }} // Set input field background color
             />
             <TextField
               margin='dense'
@@ -108,7 +105,6 @@ const ContactFAB = () => {
               required
               value={formData.message}
               onChange={handleChange}
-              sx={{ backgroundColor: '#BBBDF6', borderRadius: 4 }} // Set input field background color
             />
             <Button type='submit' variant='contained' color='primary'>
               Submit
