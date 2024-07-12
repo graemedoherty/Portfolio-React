@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
+import { ThemeContext } from './ThemeContext';
 
 import './themeSelector.css'; // Custom CSS if needed
 import themes from '../../styles'; // Import your theme definitions
 
 const ThemeSelector = () => {
   const [open, setOpen] = useState(false);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -22,17 +25,21 @@ const ThemeSelector = () => {
   return (
     <div>
       {/* Button to open the theme selection dialog */}
-      <Button onClick={handleClickOpen} sx={{ color: themes.custom.text }}>
+      <Button onClick={handleClickOpen} sx={{ color: theme.text }}>
         Theme
       </Button>
 
       {/* Dialog for selecting the theme */}
       <Dialog open={open} onClose={handleClose}>
-        <DialogContent sx={{ background: themes.custom.text }}>
+        <DialogContent sx={{ background: theme.background }}>
           <Box component='form' sx={{ display: 'flex', flexWrap: 'wrap' }}>
             {/* Map over keys of themes object and render PalleteBar for each theme */}
             {Object.keys(themes).map((themeName, index) => (
-              <PalleteBar key={index} theme={themes[themeName]} />
+              <PalleteBar
+                key={index}
+                theme={themes[themeName]}
+                toggleTheme={toggleTheme}
+              />
             ))}
           </Box>
           <DialogActions>
@@ -48,7 +55,7 @@ const ThemeSelector = () => {
 
 export default ThemeSelector;
 
-const PalleteBar = ({ theme }) => {
+const PalleteBar = ({ theme, toggleTheme }) => {
   // Define an array of theme properties you want to display
   const themeProperties = [
     { name: 'Background', color: theme.background },
@@ -59,12 +66,13 @@ const PalleteBar = ({ theme }) => {
   ];
 
   const handleClick = () => {
-    console.log('Theme', theme.name); // Log the theme name on click
+    console.log('theme ', theme.name);
+    toggleTheme(theme.name); // Update theme based on the clicked theme name
   };
 
   return (
     <>
-      <h4>{theme.name}</h4>
+      <h4 style={{ color: theme.text }}>{theme.name}</h4>
       <div className='pallete-bar' onClick={handleClick}>
         {themeProperties.map((property, index) => (
           <div

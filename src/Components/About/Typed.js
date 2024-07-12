@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { ReactTyped } from 'react-typed';
 import './about.css'; // Import the CSS file
+import { ThemeContext } from '../ThemeSelector/ThemeContext';
 
 const Typed = () => {
   const [showSecond, setShowSecond] = useState(false);
   const [showThird, setShowThird] = useState(false);
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     const timer1 = setTimeout(() => {
@@ -25,6 +27,9 @@ const Typed = () => {
     <div className='typed-container'>
       <div className='typed-group'>
         <ReactTyped
+          style={{
+            color: theme.name === 'Dark' ? theme.primary : theme.text,
+          }}
           strings={['Hello, my name is Graeme 👋']}
           typeSpeed={50}
           showCursor={false}
@@ -32,7 +37,10 @@ const Typed = () => {
         />
         {showSecond && (
           <ReactTyped
-            strings={['I am a <b>Software Engineer</b>']}
+            style={{
+              color: theme.name === 'Dark' ? theme.primary : theme.text,
+            }}
+            strings={['I am a Software Engineer']}
             typeSpeed={50}
             showCursor={false}
             className='typed-text'
@@ -43,6 +51,9 @@ const Typed = () => {
       {showThird && (
         <div className='typed-single'>
           <ReactTyped
+            style={{
+              color: theme.name === 'Dark' ? theme.primary : theme.text,
+            }}
             strings={[
               'Frontend',
               'React',

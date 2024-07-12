@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './navigation.css';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import { ThemeContext } from '../ThemeSelector/ThemeContext';
 
 const Navigation = ({ scrollToSection, activeSection }) => {
   const [isMounted, setIsMounted] = useState(false);
-
+  const { theme } = useContext(ThemeContext);
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -28,6 +29,7 @@ const Navigation = ({ scrollToSection, activeSection }) => {
         orientation='vertical'
         aria-label='Vertical button group'
         sx={{
+          color: theme.text,
           width: 1,
           fontWeight: 200,
           '& .MuiButton-root': {
@@ -48,7 +50,7 @@ const Navigation = ({ scrollToSection, activeSection }) => {
             onClick={handleButtonClick(btn.section)}
             sx={{
               backgroundColor:
-                activeSection === btn.section ? '#9893DA' : 'inherit',
+                activeSection === btn.section ? theme.primary : 'inherit',
               color: activeSection === btn.section ? 'white' : 'inherit',
               '& .MuiButton-endIcon': {
                 display: activeSection === btn.section ? 'flex' : 'none',

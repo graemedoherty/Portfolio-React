@@ -11,16 +11,17 @@ const darkTheme = {
   name: 'Dark',
   background: '#121212',
   text: '#ffffff',
-  primary: '#bb86fc',
-  secondary: '#03dac6',
+  primary: '#03dac6',
+  secondary: '#bb86fc',
   accent: '#3700b3',
 };
 
 const customTheme = {
   name: 'Custom',
-  background: '#BBBDF6',
-  text: '#9893DA',
-  primary: '#797A9E',
+  background: '#402E7A',
+  text: '#ffffff',
+  text2: '#797A9E',
+  primary: '#BBBDF6',
   secondary: '#72727E',
   accent: '#625F63',
 };

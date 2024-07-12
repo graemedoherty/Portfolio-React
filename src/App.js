@@ -1,21 +1,24 @@
 // src/App.js
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useContext } from 'react';
 import './App.css';
 import './details.css';
 import './Components/Content/content.css';
 import ThemeSelector from './Components/ThemeSelector/ThemeSelector';
+import { ThemeContext } from './Components/ThemeSelector/ThemeContext';
 import Background from './Background';
-import Grow from '@mui/material/Grow';
 import Navigation from './Components/Navigation/Navigation';
 import ContactFAB from './Components/Contact/ContactFAB';
 import SocialMediaLinks from './Components/SocialMedia/SocialMediaLinks';
 import Content from './Components/Content/Content';
+import { Slide } from '@mui/material';
 
 function App() {
   const aboutRef = useRef(null);
   const resumeRef = useRef(null);
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
+  const { theme } = useContext(ThemeContext);
+  // Check if theme is defined before accessing properties
 
   const [activeSection, setActiveSection] = useState('About');
 
@@ -66,13 +69,20 @@ function App() {
     <div className='App'>
       <Background />
       <div className='Main'>
-        <Grow
+        <Slide
           in={true}
+          direction='right'
           style={{ transformOrigin: '0 0 0' }}
-          {...(true ? { timeout: 0.5 } : {})}
+          {...(true ? { timeout: 1000 } : {})}
         >
-          <div className='Side grid-item'>
-            <div id='Details'>
+          <div
+            className='Side grid-item'
+            style={{ backgroundColor: theme.background, color: theme.text }}
+          >
+            <div
+              id='Details'
+              style={{ boxShadow: `0 4px 10px ${theme.primary}` }}
+            >
               <div id='Name'>
                 <div>
                   <ThemeSelector />
@@ -85,7 +95,7 @@ function App() {
               <SocialMediaLinks />
             </div>
           </div>
-        </Grow>
+        </Slide>
         <Content
           aboutRef={aboutRef}
           resumeRef={resumeRef}

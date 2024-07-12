@@ -1,10 +1,11 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, useContext } from 'react';
 import Particles, { initParticlesEngine } from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
+import { ThemeContext } from './Components/ThemeSelector/ThemeContext';
 
 const Background = () => {
   const [init, setInit] = useState(false);
-
+  const { theme } = useContext(ThemeContext);
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadSlim(engine);
@@ -22,7 +23,7 @@ const Background = () => {
       fullscreen: { enable: true, 'z-index': -1 },
       background: {
         color: {
-          value: '#402E7A',
+          value: theme.background,
         },
       },
       fpsLimit: 120,
@@ -49,10 +50,10 @@ const Background = () => {
       },
       particles: {
         color: {
-          value: '#144272',
+          value: theme.primary,
         },
         links: {
-          color: '#ffffff',
+          color: theme.primary,
           distance: 150,
           enable: true,
           opacity: 1,
@@ -86,7 +87,7 @@ const Background = () => {
       },
       detectRetina: true,
     }),
-    []
+    [theme]
   );
 
   if (init) {
