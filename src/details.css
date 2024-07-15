@@ -8,8 +8,6 @@
   width: 99%;
   height: 100%;
   /* From https://css.glass */
-
-  box-shadow: 0 4px 10px rgba(3, 218, 198, 1);
   backdrop-filter: blur(3.3px);
   -webkit-backdrop-filter: blur(3.3px);
 }

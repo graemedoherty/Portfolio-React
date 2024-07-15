@@ -9,7 +9,7 @@ const lightTheme = {
 
 const darkTheme = {
   name: 'Dark',
-  background: '#121212',
+  background: '#000000',
   text: '#ffffff',
   primary: '#03dac6',
   secondary: '#bb86fc',

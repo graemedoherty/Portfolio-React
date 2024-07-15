@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
 import Fab from '@mui/material/Fab';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
 import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 import emailjs from 'emailjs-com';
+import { ThemeContext } from '../ThemeSelector/ThemeContext';
 import './contact.css';
 
 const ContactFAB = () => {
   const userId = process.env.REACT_APP_EMAILJS_USERID;
   const templateId = process.env.REACT_APP_EMAILJS_TEMPLATEID;
   const serviceId = process.env.REACT_APP_EMAILJS_SERVICEID;
+  const { theme } = useContext(ThemeContext);
   const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -43,7 +45,6 @@ const ContactFAB = () => {
         handleClose();
       })
       .catch((error) => {
-        // Handle error state
         console.error('Error sending email:', error);
       });
   };
@@ -52,13 +53,16 @@ const ContactFAB = () => {
     <>
       <Fab
         className='fab'
-        color='primary'
         aria-label='mail'
         onClick={handleOpen}
         sx={{
-          backgroundColor: '#BBBDF6',
+          backgroundColor: theme.primary,
+          color: '#ffffff', // Original color or white for light theme
+          transition: 'transform 0.2s ease-in-out', // Transition for transform property
           '&:hover': {
-            backgroundColor: '#BBBDF6',
+            transform: 'scale(1.05)', // Scale effect on hover
+            color: theme.secondary,
+            background: theme.primary,
           },
         }}
       >
@@ -82,6 +86,10 @@ const ContactFAB = () => {
               required
               value={formData.name}
               onChange={handleChange}
+              sx={{
+                input: { color: theme.text },
+                label: { color: theme.text },
+              }}
             />
             <TextField
               margin='dense'
@@ -93,6 +101,10 @@ const ContactFAB = () => {
               required
               value={formData.email}
               onChange={handleChange}
+              sx={{
+                input: { color: theme.text },
+                label: { color: theme.text },
+              }}
             />
             <TextField
               margin='dense'
@@ -105,8 +117,16 @@ const ContactFAB = () => {
               required
               value={formData.message}
               onChange={handleChange}
+              sx={{
+                input: { color: theme.text },
+                label: { color: theme.text },
+              }}
             />
-            <Button type='submit' variant='contained' color='primary'>
+            <Button
+              type='submit'
+              variant='contained'
+              sx={{ backgroundColor: theme.primary, color: theme.text }}
+            >
               Submit
             </Button>
           </form>

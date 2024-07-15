@@ -38,6 +38,7 @@ const ThemeSelector = () => {
               <PalleteBar
                 key={index}
                 theme={themes[themeName]}
+                themeName={theme.name}
                 toggleTheme={toggleTheme}
               />
             ))}
@@ -55,7 +56,7 @@ const ThemeSelector = () => {
 
 export default ThemeSelector;
 
-const PalleteBar = ({ theme, toggleTheme }) => {
+const PalleteBar = ({ theme, toggleTheme, themeName }) => {
   // Define an array of theme properties you want to display
   const themeProperties = [
     { name: 'Background', color: theme.background },
@@ -66,13 +67,18 @@ const PalleteBar = ({ theme, toggleTheme }) => {
   ];
 
   const handleClick = () => {
-    console.log('theme ', theme.name);
     toggleTheme(theme.name); // Update theme based on the clicked theme name
   };
 
   return (
     <>
-      <h4 style={{ color: theme.text }}>{theme.name}</h4>
+      <h5
+        style={{
+          color: themeName === ('Dark' || 'Custom') ? 'white' : 'black',
+        }}
+      >
+        {theme.name}
+      </h5>
       <div className='pallete-bar' onClick={handleClick}>
         {themeProperties.map((property, index) => (
           <div

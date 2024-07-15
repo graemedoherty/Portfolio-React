@@ -2,15 +2,17 @@ import React from 'react';
 import Slide from '@mui/material/Slide';
 import About from '../About/About';
 import './content.css';
+// import { ThemeContext } from '../ThemeSelector/ThemeContext';
 
 const Content = ({ aboutRef, resumeRef, skillsRef, projectsRef }) => {
+  // const theme = useContext(ThemeContext);
   return (
     <div className='Content grid-item'>
       <Slide
         in={true}
         container={aboutRef.current}
         style={{ transformOrigin: '0 0 0' }}
-        timeout={2000}
+        timeout={1000}
         direction='up'
       >
         <div className='Content-Row' id='About' ref={aboutRef}>
@@ -21,7 +23,7 @@ const Content = ({ aboutRef, resumeRef, skillsRef, projectsRef }) => {
         in={true}
         container={resumeRef.current}
         style={{ transformOrigin: '0 0 0' }}
-        timeout={1600}
+        timeout={800}
         direction='up'
       >
         <div className='Content-Row' id='Resume' ref={resumeRef}>
@@ -32,7 +34,7 @@ const Content = ({ aboutRef, resumeRef, skillsRef, projectsRef }) => {
         in={true}
         container={skillsRef.current}
         style={{ transformOrigin: '0 0 0' }}
-        timeout={1200}
+        timeout={600}
         direction='up'
       >
         <div className='Content-Row' id='Skills' ref={skillsRef}>
@@ -43,7 +45,7 @@ const Content = ({ aboutRef, resumeRef, skillsRef, projectsRef }) => {
         in={true}
         container={projectsRef.current}
         style={{ transformOrigin: '0 0 0' }}
-        timeout={800}
+        timeout={400}
         direction='up'
       >
         <div className='Content-Row' id='Projects' ref={projectsRef}>
